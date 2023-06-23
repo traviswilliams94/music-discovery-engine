@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect}  from 'react';
 
@@ -24,27 +23,22 @@ function App() {
       const token = data.access_token;
       setApiKey(token);
     })
-  }, [])
+  } , [])
 
   //template function for how to use the authentication
-  function testGetGenreSeeds() {
-    fetch(`${ApiBaseUrl}/recommendations/available-genre-seeds`, {
+  function template() {
+    fetch(`${ApiBaseUrl}/endpoint`, {//replace endpoint
       headers: {
         "Content-Type": "application/json",
-        Authorization: bearerToken,
+        Authorization: bearerToken,//will only work after useEffect async completes
       },
     })
     .then(res => res.json())
-    .then(console.log)
+    .then()//do whatever
   }
 
-  //testGetGenreSeeds();
-  
   return (
     <div className="App">
-      <div>
-        <h1></h1>
-      </div>
     </div>
   );
 }
