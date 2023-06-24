@@ -3,7 +3,6 @@ import {useState, useEffect}  from 'react';
 
 const ApiBaseUrl = "https://api.spotify.com/v1";
 
-
 function App() {
   const [apiKey, setApiKey] = useState("");
 
@@ -16,7 +15,7 @@ function App() {
       headers: {
         "Content-Type" : "application/x-www-form-urlencoded"
       },
-      body: "grant_type=client_credentials&client_id=2c092ae6773d4bbfb315299881de041a&client_secret=78f58078f91d43bf906fc8fc1e915c76"
+      body: `${process.env.REACT_APP_API_KEY}`
     })
     .then(res => res.json())
     .then(data => {
