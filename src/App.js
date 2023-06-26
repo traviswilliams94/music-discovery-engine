@@ -1,6 +1,7 @@
 import './App.css';
 import {useState, useEffect}  from 'react';
 import Track from "./Track.js";
+import { generateRequestFromSeeds } from './helperFunctions/helperFunctions';
 
 function App() {
   const [apiKey, setApiKey] = useState("");
@@ -43,25 +44,6 @@ function App() {
     });
   }
 
-  //TODO fix this nightmare
-  function generateRequestFromSeeds(seedGenres , seedTracks, seedArtists) {
-    let stringRequest = "";
-    if (seedTracks !== undefined && seedArtists !== undefined) {
-      stringRequest = `https://api.spotify.com/v1/recommendations?seed_artists=${seedArtists}&seed_genres=${seedGenres}&seed_tracks=${seedTracks}`;
-    }
-    else if (seedTracks !== undefined) {
-      stringRequest = `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}&seed_tracks=${seedTracks}`;
-    }
-    else if (seedArtists !== undefined) {
-      stringRequest = `https://api.spotify.com/v1/recommendations?seed_artists=${seedArtists}&seed_genres=${seedGenres}`;
-    }
-    else {
-      stringRequest = `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}`;
-    }
-    console.log(stringRequest);
-    return stringRequest;
-  }
-
   //template function for how to use the authentication
   function template() {
     fetch("https://api.spotify.com/v1/endpoint", {//replace endpoint
@@ -84,7 +66,7 @@ function App() {
   //I just didn't want to do all the routing work today
   //let me know when you set up the routing(or when i do) and we can move things around
   return (
-    <div className="App" id="Tracklist">
+    <div className="Tracklist" id="Tracklist">
       <button onClick={getRandomTracks}>Get Random Tracks</button>
       {tracks ? 
       tracks.map(track => {
