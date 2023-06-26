@@ -6,9 +6,14 @@ function RandomGen() {
 
     return (
         <div>
-            <p>You are on the Generator Page</p>
+            <button id="randombutton">Generate Genre</button>
             {/* <button onClick={getRandomTracks}>Get Random Tracks</button> */}
-            <TrackItem />
+            <p>You are on the Generator Page</p>
+            <h2>Genre: {}</h2>
+                <div>
+                    <h2>Matching Tracks:</h2>
+                    <TrackItem />
+                </div>
         </div>
     )
 }
