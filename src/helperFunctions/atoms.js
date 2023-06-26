@@ -14,3 +14,8 @@ export const playlistAtom = atom({
   key: 'playlist',
   default: []
 })
+
+export const artistsAtom = atom({
+  key: 'artists',
+  default: []
+})

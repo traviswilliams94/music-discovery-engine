@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useRecoilValue } from 'recoil';
-import { apiKeyAtom } from "../helperFunctions/atoms";
-import TrackDisplay from "./TrackDisplay";
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { apiKeyAtom, artistsAtom } from "../helperFunctions/atoms";
+import ArtistDisplay from "./ArtistDisplay";
 
 function SearchBar() {
     const [searchTerm, setSearchTerm] = useState("");
+    const [artists, setArtists] = useRecoilState(artistsAtom);
     const apiKey = useRecoilValue(apiKeyAtom);
     let bearerToken = `Bearer ${apiKey}`;
     
@@ -21,8 +22,9 @@ function SearchBar() {
             },
           })
         .then(res => res.json())
-        .then(console.log);//returns list of artists that relate to search term (20)
-        //TODO decide what we want to turn that into, we can grab the spotify IDs from them this way
+        .then(data => {
+            setArtists(data.artists.items);
+        });
     }
 
     return (
@@ -35,7 +37,7 @@ function SearchBar() {
             value={searchTerm}
             />
             <button onClick={search}>Search</button>
-            <TrackDisplay />
+            <ArtistDisplay />
             <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
         </div>
