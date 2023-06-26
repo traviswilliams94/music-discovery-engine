@@ -1,7 +1,16 @@
 import './App.css';
 import {useState, useEffect}  from 'react';
+
 import Track from "./Track.js";
 import { generateRequestFromSeeds } from './helperFunctions/helperFunctions';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import Home from './Components/Home';
+import SearchBar from './Components/SearchBar';
+import PlaylistPage from './Components/PlaylistPage';
+import RandomGen from './Components/RandomGen';
+
+const ApiBaseUrl = "https://api.spotify.com/v1";
 
 function App() {
   const [apiKey, setApiKey] = useState("");
@@ -57,26 +66,25 @@ function App() {
   }
 
 
+
   //TODO turn into maybe an "add to playlist" button
   function getID(track) {
     console.log(track.id);
   }
-  
-  //TODO the tracklist and other methods in here shouldn't be at the top level,
-  //I just didn't want to do all the routing work today
-  //let me know when you set up the routing(or when i do) and we can move things around
+
+  const [page, setPage] = useState("/")
+
   return (
-    <div className="Tracklist" id="Tracklist">
-      <button onClick={getRandomTracks}>Get Random Tracks</button>
-      {tracks ? 
-      tracks.map(track => {
-        return <Track 
-        key={track.name} 
-        track={track}
-        getID={getID}/>
-      })
-      : <h1>Loading...</h1>
-      }
+    <div className="App">
+
+      <NavBar onChangePage={setPage}/>
+      <Routes>
+          <Route path='/searchbar' element={<SearchBar />}></Route>
+          <Route path='/createplaylist' element={<PlaylistPage />}></Route>
+          <Route path='/randomgenerator' element={<RandomGen />}></Route>
+          <Route path='/' element={<Home />}></Route>
+      </Routes>
+
     </div>
   );
 }
