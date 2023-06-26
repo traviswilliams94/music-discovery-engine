@@ -10,7 +10,7 @@ function RandomGen({tracks, updateTracks, getID, bearerToken}) {
 
     function generateGenre(){
       fetch("http://localhost:3001/genres")
-      .then(res => res.json)
+      .then(res => res.json())
       .then(setGenres)
       .then(setGenre(genres[randomGenreIndex])); 
 }
