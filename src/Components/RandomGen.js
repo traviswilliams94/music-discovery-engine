@@ -1,12 +1,18 @@
 import React, {useState} from "react";
 import TrackDisplay from './TrackDisplay';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { apiKeyAtom, tracksAtom } from "../helperFunctions/atoms";
 import { generateRequestFromSeeds } from '../helperFunctions/helperFunctions';
 
-function RandomGen({tracks, updateTracks, getID, bearerToken}) {
-    //console.log("Random")
-    const [genres, setGenres] = useState([]);
-    const [genre, setGenre] = useState('');
-    const randomGenreIndex = Math.floor(Math.random() * genres.length);
+
+function RandomGen({getID}) {
+    
+  const [genres, setGenres] = useState([]);
+  const [genre, setGenre] = useState('');
+  const [tracks, setTracks] = useRecoilState(tracksAtom);
+  const apiKey = useRecoilValue(apiKeyAtom);
+  let bearerToken = `Bearer ${apiKey}`;
+  const randomGenreIndex = Math.floor(Math.random() * genres.length);
 
     function generateGenre(){
       fetch("http://localhost:3001/genres")
@@ -17,8 +23,8 @@ function RandomGen({tracks, updateTracks, getID, bearerToken}) {
 
 
 
-    function getRandomTracks(genres) {
-        const request = generateRequestFromSeeds(genres, "", "");
+    function getRandomTracks(genre) {
+        const request = generateRequestFromSeeds(genre, "", "");
         fetch(request, {
           headers: {
             "Content-Type": "application/json",
@@ -27,7 +33,7 @@ function RandomGen({tracks, updateTracks, getID, bearerToken}) {
         })
         .then(res => res.json())
         .then(data => {
-          updateTracks(data.tracks);
+          setTracks(data.tracks);
         });
       }
     

@@ -11,7 +11,6 @@ import RandomGen from './Components/RandomGen';
 
 function App() {
   const [apiKey, setApiKey] = useState("");
-  const [tracks, setTracks] = useState([]);
   const [playlist, setPlaylist] = useState([]);
 
   let bearerToken = `Bearer ${apiKey}`;
@@ -33,9 +32,6 @@ function App() {
     })
   } , [])
 
-  function updateTracks(tracks) {
-    setTracks(tracks);
-  }
 
   //template function for how to use the authentication
   function template() {
@@ -69,12 +65,7 @@ function App() {
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
           <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
-          <Route path='/randomgenerator' element={<RandomGen 
-          tracks={tracks}
-          updateTracks={updateTracks}
-          getID={addToPlaylist}
-          bearerToken={bearerToken}
-          />}></Route>
+          <Route path='/randomgenerator' element={<RandomGen />}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
 
