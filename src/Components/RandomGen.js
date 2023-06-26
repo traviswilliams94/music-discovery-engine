@@ -19,8 +19,8 @@ function RandomGen() {
       .then(setGenre(genres[randomGenreIndex])); 
 }
 
-  function getRandomTracks(genres) {
-    const request = generateRequestFromSeeds(genres, "", "");
+  function getRandomTracks(genre) {
+    const request = generateRequestFromSeeds(genre, "", "");
     fetch(request, {
       headers: {
         "Content-Type": "application/json",
@@ -29,6 +29,7 @@ function RandomGen() {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setTracks(data.tracks);
       });
   }
@@ -36,9 +37,9 @@ function RandomGen() {
   return (
     <div>
       <button className="genrebutton" onClick={generateGenre} >Generate Genre</button>
-      <button className="trackbutton" onClick={() => { getRandomTracks(genres) }}>Get Random Tracks</button>
+      <button className="trackbutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
       <p>You are on the Generator Page</p>
-      <h2>Genre: {genres}</h2>
+      <h2>Genre: {genre} </h2>
       <div>
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
