@@ -9,10 +9,11 @@ function RandomGen() {
   const [genre, setGenre] = useState('');
   const [tracks, setTracks] = useRecoilState(tracksAtom);
   const apiKey = useRecoilValue(apiKeyAtom);
-  const randomGenreIndex = Math.floor(Math.random() * genres.length);
+  
   let bearerToken = `Bearer ${apiKey}`;
   
   function generateGenre(){
+    const randomGenreIndex = Math.floor(Math.random() * genres.length);
     fetch("http://localhost:3001/genres")
       .then(res => res.json())
       .then(setGenres)
@@ -39,7 +40,7 @@ function RandomGen() {
       <button className="genrebutton" onClick={generateGenre} >Generate Genre</button>
       <button className="trackbutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
       <p>You are on the Generator Page</p>
-      <h2>Genre: {genre} </h2>
+      <h2>Genre: {genre}</h2>
       <div>
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
