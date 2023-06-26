@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#navbar {
+  background-color: chartreuse;
+  margin-top: 10px;
+
+  
+  
+}
+
+.NavLink {
+  padding-left: 30px;
+  align-items: center;
+  padding: 30px;
+  
+}

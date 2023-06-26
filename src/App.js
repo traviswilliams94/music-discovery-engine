@@ -1,5 +1,11 @@
 import './App.css';
 import {useState, useEffect}  from 'react';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar';
+import Home from './Components/Home';
+import SearchBar from './Components/SearchBar';
+import PlaylistPage from './Components/PlaylistPage';
+import RandomGen from './Components/RandomGen';
 
 const ApiBaseUrl = "https://api.spotify.com/v1";
 
@@ -36,8 +42,19 @@ function App() {
     .then()//do whatever
   }
 
+  const [page, setPage] = useState("/")
+
   return (
     <div className="App">
+
+      <NavBar onChangePage={setPage}/>
+      <Routes>
+          <Route path='/searchbar' element={<SearchBar />}></Route>
+          <Route path='/createplaylist' element={<PlaylistPage />}></Route>
+          <Route path='/randomgenerator' element={<RandomGen />}></Route>
+          <Route path='/' element={<Home />}></Route>
+      </Routes>
+     
     </div>
   );
 }
