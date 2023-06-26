@@ -23,6 +23,8 @@ function PlaylistDisplay(playlist) {
                 <TrackDisplay tracks={playlist.playlist} inPlaylist={true}/>
                 : "Playlist will display here"}
             </div>
+            <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
+            alt={"Spotify"}/>
          </div>
     )
 }

@@ -25,10 +25,12 @@ function RandomGen({tracks, updateTracks, getID, bearerToken}) {
             <button onClick={() => {getRandomTracks(genres)}}>Get Random Tracks</button>
             <p>You are on the Generator Page</p>
             <h2>Genre: {genres}</h2>
-                <div>
-                    <h2>Matching Tracks:</h2>
-                    <TrackDisplay tracks={tracks} getID={getID}/>
-                </div>
+            <div>
+              <h2>Matching Tracks:</h2>
+                <TrackDisplay tracks={tracks} getID={getID}/>
+            </div>
+            <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
+            alt={"Spotify"}/>
         </div>
     )
 }
