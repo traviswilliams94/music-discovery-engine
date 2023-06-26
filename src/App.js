@@ -28,7 +28,7 @@ function App() {
     .then(data => {
       const token = data.access_token;
       setApiKey(token);
-      //console.log(token);
+      console.log(token);
     })
   } , [])
 

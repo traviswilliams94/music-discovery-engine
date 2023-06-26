@@ -44,7 +44,7 @@ function RandomGen({getID}) {
             <h2>Genre: {genre}</h2>
             <div>
               <h2>Matching Tracks:</h2>
-              <button className="tracksbutton" onClick={() => {getRandomTracks(genres)}}>Generate Tracks</button>
+              <button className="tracksbutton" onClick={() => {getRandomTracks(genre)}}>Generate Tracks</button>
                 <TrackDisplay tracks={tracks} getID={getID}/>
             </div>
             <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
