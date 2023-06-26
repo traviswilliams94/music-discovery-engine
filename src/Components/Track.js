@@ -36,4 +36,4 @@ export default function Track({ track, inPlaylist }) {
       :<button onClick={addToPlaylist}>Add to Playlist</button>}
     </div>
   )
-}
+}  

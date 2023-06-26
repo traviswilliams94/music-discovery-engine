@@ -12,6 +12,7 @@ import RandomGen from './Components/RandomGen';
 //ApiBaseUrl = "https://api.spotify.com/v1";
 
 function App() {
+
   const [apiKey, setApiKey] = useRecoilState(apiKeyAtom);
   const [playlist, setPlaylist] = useState([]);
 
@@ -30,7 +31,7 @@ function App() {
     .then(data => {
       const token = data.access_token;
       setApiKey(token);
-      //console.log(token);
+      console.log(token);
     })
   } , [])
 
@@ -59,7 +60,7 @@ function App() {
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
           <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
-          <Route path='/randomgenerator' element={<RandomGen/>}></Route>
+          <Route path='/randomgenerator' element={<RandomGen />}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
 
