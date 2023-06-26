@@ -22,4 +22,5 @@ https://docs.google.com/document/d/1t5TvGA5RfTDYxbvyQxK9Gq9pIqLk5HLQkYGlJuasg0U/
  - fork/clone
  - npm install
  - npm start
- - @TODO server setup port information etc
+ - npm run server (localhost:3001)
+ - website hosted at localhost:3000
