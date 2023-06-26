@@ -1,6 +1,8 @@
 import './App.css';
 import {useState, useEffect}  from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { apiKeyAtom } from './helperFunctions/atoms';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import SearchBar from './Components/SearchBar';
@@ -10,8 +12,7 @@ import RandomGen from './Components/RandomGen';
 //ApiBaseUrl = "https://api.spotify.com/v1";
 
 function App() {
-  const [apiKey, setApiKey] = useState("");
-  const [tracks, setTracks] = useState([]);
+  const [apiKey, setApiKey] = useRecoilState(apiKeyAtom);
   const [playlist, setPlaylist] = useState([]);
 
   let bearerToken = `Bearer ${apiKey}`;
@@ -33,10 +34,6 @@ function App() {
     })
   } , [])
 
-  function updateTracks(tracks) {
-    setTracks(tracks);
-  }
-
   //template function for how to use the authentication
   function template() {
     fetch("https://api.spotify.com/v1/endpoint", {//replace endpoint
@@ -47,13 +44,6 @@ function App() {
     })
     .then(res => res.json())
     .then()//do whatever
-  }
-
-
-
-  //TODO refactor from playlist display
-  function removeFromPlaylist(track) {
-    console.log(track.id);
   }
 
   function addToPlaylist(track) {
@@ -69,12 +59,7 @@ function App() {
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
           <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
-          <Route path='/randomgenerator' element={<RandomGen 
-          tracks={tracks}
-          updateTracks={updateTracks}
-          getID={addToPlaylist}
-          bearerToken={bearerToken}
-          />}></Route>
+          <Route path='/randomgenerator' element={<RandomGen/>}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
 

@@ -1,11 +1,9 @@
 import TrackDisplay from "./TrackDisplay.js";
+import { playlistAtom } from "../helperFunctions/atoms.js";
+import {useRecoilValue} from "recoil";
 
-function PlaylistDisplay(playlist) {
-    //TODO maybe fix playlist (it is very barely different from tracks, but maybe thats good?)
-    let populatedPlaylist = false;
-    if (playlist.playlist.length !== 0) {
-        populatedPlaylist = true;
-    }
+function PlaylistDisplay() {
+    const playlist = useRecoilValue(playlistAtom);
 
     return (
         <div>
@@ -19,11 +17,9 @@ function PlaylistDisplay(playlist) {
                 <button type="submit">Add Song!</button>
             </form>
             <div>
-                {populatedPlaylist ?
-                <TrackDisplay tracks={playlist.playlist} inPlaylist={true}/>
-                : "Playlist will display here"}
+                <TrackDisplay tracks={playlist} inPlaylist={true}/>
             </div>
-            <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
+            <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
          </div>
     )
