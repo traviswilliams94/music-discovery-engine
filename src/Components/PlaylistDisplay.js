@@ -1,6 +1,12 @@
+import TrackDisplay from "./TrackDisplay.js";
 
+function PlaylistDisplay(playlist) {
+    //TODO maybe fix playlist (it is very barely different from tracks, but maybe thats good?)
+    let populatedPlaylist = false;
+    if (playlist.playlist.length !== 0) {
+        populatedPlaylist = true;
+    }
 
-function PlaylistDisplay() {
     return (
         <div>
             <form>
@@ -12,7 +18,11 @@ function PlaylistDisplay() {
                 />
                 <button type="submit">Add Song!</button>
             </form>
-        <p>Playlist will display here</p>
+            <div>
+                {populatedPlaylist ?
+                <TrackDisplay tracks={playlist.playlist} inPlaylist={true}/>
+                : "Playlist will display here"}
+            </div>
          </div>
     )
 }

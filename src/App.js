@@ -1,8 +1,5 @@
 import './App.css';
 import {useState, useEffect}  from 'react';
-
-import Track from "./Track.js";
-import { generateRequestFromSeeds } from './helperFunctions/helperFunctions';
 import { Route, Routes } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
@@ -10,11 +7,12 @@ import SearchBar from './Components/SearchBar';
 import PlaylistPage from './Components/PlaylistPage';
 import RandomGen from './Components/RandomGen';
 
-const ApiBaseUrl = "https://api.spotify.com/v1";
+//ApiBaseUrl = "https://api.spotify.com/v1";
 
 function App() {
   const [apiKey, setApiKey] = useState("");
   const [tracks, setTracks] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
 
   let bearerToken = `Bearer ${apiKey}`;
 
@@ -35,22 +33,8 @@ function App() {
     })
   } , [])
 
-  //test genre
-  const genres = "classical";
-
-  function getRandomTracks() {
-    const request = generateRequestFromSeeds(genres, "", "");
-    fetch(request, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: bearerToken,
-      },
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data.tracks);
-      setTracks(data.tracks);
-    });
+  function updateTracks(tracks) {
+    setTracks(tracks);
   }
 
   //template function for how to use the authentication
@@ -67,9 +51,13 @@ function App() {
 
 
 
-  //TODO turn into maybe an "add to playlist" button
-  function getID(track) {
+  //TODO refactor from playlist display
+  function removeFromPlaylist(track) {
     console.log(track.id);
+  }
+
+  function addToPlaylist(track) {
+    setPlaylist(playlist => [...playlist, track]);
   }
 
   const [page, setPage] = useState("/")
@@ -80,8 +68,13 @@ function App() {
       <NavBar onChangePage={setPage}/>
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
-          <Route path='/createplaylist' element={<PlaylistPage />}></Route>
-          <Route path='/randomgenerator' element={<RandomGen />}></Route>
+          <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
+          <Route path='/randomgenerator' element={<RandomGen 
+          tracks={tracks}
+          updateTracks={updateTracks}
+          getID={addToPlaylist}
+          bearerToken={bearerToken}
+          />}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
 
