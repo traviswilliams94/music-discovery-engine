@@ -6,11 +6,11 @@ Displays tracks based on user input and allows the user to select tracks for a p
 
 1. as a user, I want there to be a homepage where i can choose what part of the app to use
 
-2. as a user, I can discover tracks by genre/track/artist and select them to add to a playlist
+2. as a user, I can discover tracks by genre and select them to add to a playlist
 
-3. as a user, I can generate a random list of tracks and select them to add to a playlist
+3. as a user, I can get a list of related artists by searching an artist (or a random string!)
 
-4. as a user, I can view a playlist that I've created on the page, and be able to use that playlist in spotify (dependent on OAuth)
+4. as a user, I can view a playlist that I've created on the page, *and be able to use that playlist in spotify *(dependent on OAuth)
 
 
 ## Wire Frames:
