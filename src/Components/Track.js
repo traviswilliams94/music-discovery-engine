@@ -12,10 +12,10 @@ export default function Track({ track, inPlaylist }) {
   function addToPlaylist() {
     setPlaylist([...playlist, track])
   }
+  //remove currently breaks if you add the same song more than once, TODO fix
   function removeFromPlaylist() {
-    setPlaylist((playlist) => {
-      playlist.filter(item => item.name !== name);
-    })
+    const editedList = playlist.filter(item => item.name !== name);
+    setPlaylist(editedList);
   }
 
   //TODO connect css library into classnames

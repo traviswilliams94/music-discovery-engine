@@ -9,7 +9,7 @@ function RandomGen() {
   const apiKey = useRecoilValue(apiKeyAtom);
   let bearerToken = `Bearer ${apiKey}`;
 
-  const genres = "rock,classical";//TODO unhardcode
+  const genres = "rock,     classical";//TODO unhardcode
 
   function getRandomTracks(genres) {
     const request = generateRequestFromSeeds(genres, "", "");
