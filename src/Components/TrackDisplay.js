@@ -1,7 +1,7 @@
 import React from "react";
 import Track from "./Track.js";
 
-function TrackDisplay({tracks, getID, inPlaylist}) {
+function TrackDisplay({tracks, inPlaylist}) {
     return (
         <div className="TrackList" id="Tracklist">
         
@@ -10,7 +10,6 @@ function TrackDisplay({tracks, getID, inPlaylist}) {
           return <Track 
           key={track.name} 
           track={track}
-          getID={getID}
           inPlaylist={inPlaylist}/>
         })
         : <h1>Loading...</h1>

@@ -10,7 +10,7 @@ function Home(){
         </div>
         <div className="legal">
             <h2>Built using the Spotify Web API</h2>
-            <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
+            <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
         </div>
         </div>

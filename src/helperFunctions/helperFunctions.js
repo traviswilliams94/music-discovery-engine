@@ -15,6 +15,5 @@ export function generateRequestFromSeeds(seedGenres , seedTracks, seedArtists) {
   else {
     stringRequest = `https://api.spotify.com/v1/recommendations?seed_genres=${seedGenres}`;
   }
-  console.log(stringRequest);
   return stringRequest;
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import PlaylistDisplay from "./PlaylistDisplay";
 
-function PlaylistPage({playlist}) {
-    //console.log("Playlist")
+function PlaylistPage() {
 
     return (
         <div>
             <p>You are on the Playlist Page</p>
-            <PlaylistDisplay playlist={playlist}/>
+            <PlaylistDisplay/>
         </div>
     )
 }

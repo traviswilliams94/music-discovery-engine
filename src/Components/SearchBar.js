@@ -19,7 +19,7 @@ function SearchBar() {
             />
             <button>Search</button>
             <TrackDisplay />
-            <img src={"https://developer.spotify.com/images/guidelines/design/logos.svg"}
+            <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
         </div>
     )
