@@ -59,7 +59,7 @@ function App() {
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
           <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
-          <Route path='/randomgenerator' element={<RandomGen bearerToken={bearerToken}/>}></Route>
+          <Route path='/randomgenerator' element={<RandomGen/>}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
 

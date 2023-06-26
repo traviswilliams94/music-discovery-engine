@@ -1,33 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRecoilValue } from 'recoil';
+import { apiKeyAtom } from "../helperFunctions/atoms";
 import TrackDisplay from "./TrackDisplay";
 
 function SearchBar() {
-    //console.log("Search")
-    //TODO implement search **WILL BE A STRETCH GOAL TO DO THIS BY NAME**
-    //non stretch version accepts Spotify IDs, which are impossible to read, but the api works
-    //naturally with them. to do it by name we would have to handwrite a LOT of logic to convert
-    //strings to a guess of what people want as a spotify ID
-    //I'll talk about this when I explain what I understand about the API -RL
+    const [searchTerm, setSearchTerm] = useState("");
+    const apiKey = useRecoilValue(apiKeyAtom);
+    let bearerToken = `Bearer ${apiKey}`;
+    
+    function handleChange(e) {
+        setSearchTerm(e.target.value);
+    }
+
+    function search() {
+        const request = `https://api.spotify.com/v1/search?q=${searchTerm}&type=artist`
+        fetch(request, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: bearerToken,
+            },
+          })
+        .then(res => res.json())
+        .then(console.log);//returns list of artists that relate to search term (20)
+        //TODO decide what we want to turn that into, we can grab the spotify IDs from them this way
+    }
+
     return (
         <div>
             <p>You are on the Search Page</p>
-            <label>Search genres, artists, or track titles: </label>
-            <input
+            <label>Search artists: </label>
+            <input onChange={handleChange}
             type="text"
             name="search"
-            placeholder="try it out!"
+            value={searchTerm}
             />
-            <button>Search</button>
+            <button onClick={search}>Search</button>
             <TrackDisplay />
             <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
         </div>
     )
 }
-
-
-
-
-
 
 export default SearchBar;

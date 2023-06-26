@@ -1,13 +1,15 @@
 import React from "react";
 import TrackDisplay from './TrackDisplay';
-import { useRecoilState } from 'recoil';
-import { tracksAtom } from "../helperFunctions/atoms";
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { apiKeyAtom, tracksAtom } from "../helperFunctions/atoms";
 import { generateRequestFromSeeds } from '../helperFunctions/helperFunctions';
 
-function RandomGen({bearerToken}) {
+function RandomGen() {
   const [tracks, setTracks] = useRecoilState(tracksAtom);
+  const apiKey = useRecoilValue(apiKeyAtom);
+  let bearerToken = `Bearer ${apiKey}`;
 
-  const genres = "rock";//TODO unhardcode
+  const genres = "rock,classical";//TODO unhardcode
 
   function getRandomTracks(genres) {
     const request = generateRequestFromSeeds(genres, "", "");
