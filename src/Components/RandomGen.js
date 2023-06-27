@@ -31,24 +31,22 @@ function RandomGen() {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
-        setTracks(data.tracks);
+       setTracks(data.tracks);
       });
   }
 
   return (
-    <div>
-      <button className="genrebutton" onClick={generateGenre} >Generate Genre</button>
-      <p>You are on the Generator Page</p>
-      <h2>Genre: {genres}</h2>
+    <div className="background">
+      <p></p>
+      <button id="genrebutton" className="randombutton" onClick={generateGenre} >Generate Genre</button>
+      <h2>Genre: {genre}</h2>
       <div>
-      <button className="trackbutton" onClick={() => { getRandomTracks(genres) }}>Get Random Tracks</button>
+      <button id="trackbutton" className="randombutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
       </div>
       <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
         alt={"Spotify"} />
-    </div>
     </div>
   )
 }
