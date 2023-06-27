@@ -14,7 +14,7 @@ code {
 
 #navbar {
   background-color: chartreuse;
-  margin-top: 10px;
+  margin-top: 5px;
 
   
   
@@ -23,15 +23,41 @@ code {
 .NavLink {
   padding-left: 30px;
   align-items: center;
-  padding: 30px;
+  padding-right: 30px;
   
 }
 
-.genrebutton {
+#genrebutton {
   margin-top: 25px;
 }
 
 img {
   height: 200px;
   width: 250px;
+  
+}
+
+.playlistbutton {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+#header {
+  background-color: chartreuse;
+}
+
+.aboutus {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.randombutton {
+  background-color: black;
+  color: whitesmoke;
+  border-radius: 3px;
+  border-color: black;
+  
+}
+.background {
+  background-color: rgba(128, 255, 0, 0.554);
 }

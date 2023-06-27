@@ -4,7 +4,7 @@ import PlaylistDisplay from "./PlaylistDisplay";
 function PlaylistPage() {
 
     return (
-        <div>
+        <div className="background">
             <p>You are on the Playlist Page</p>
             <PlaylistDisplay/>
         </div>

@@ -3,13 +3,25 @@ import React from "react";
 function Home(){
     //console.log("Home")
     return(
-        <div>
-        <p>You are on the home page</p>
+        <div className="background">
         <div className="aboutus">
             <h2>About Us</h2>
+            Hello! Welcome to the Music Discovery Engine! This app was built by two music lovers. The intention is to facilitate discovery of music in new genres to find new tracks and artists
+            that you otherwise may not have  known about. We hope you enjoy searching for new music and make sure to save the songs and artist that look interesting to you!
+        </div>
+        <br />
+        <div className="aboutus">
+            <p>This app was built by <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/travis-williams-dotcom/">Travis Williams</a> and <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/ryan-m-lindner/">Ryan Lindner</a>.</p>
+            <p>Travis has been playing music since he started taking piano in 2005 as a punishment. Which it turned out he loved. A few years later startetaking drum lessons which are now
+                his primary instrument. You can find Travis playing drums around town in Denver with the cover band Cover? I Hardly Know Her, and there is a good chance you'll bump into him 
+                at any or all of the myriad live music venues in the Denver Area. Travis enjoys all genres of music, for the most part, but is slightly partial to House, Melodic Hardcore, Funk,
+                and whatever LCD Soundsystem qualifies as. 
+            </p>
+            <br />
+            <p>Ryan is really cool and will put his bio here.</p>
         </div>
         <div className="legal">
-            <h2>Built using the Spotify Web API</h2>
+            <h4>Built using the Spotify Web API</h4>
             <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
         </div>

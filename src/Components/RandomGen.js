@@ -36,16 +36,18 @@ function RandomGen() {
 
   return (
     <div>
-      <button className="genrebutton" onClick={generateGenre} >Generate Genre</button>
-      <button className="trackbutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
-      <p>You are on the Generator Page</p>
+      <p></p>
+    <div className="background">
+      <button  id="genrebutton" className="randombutton" onClick={generateGenre} >Generate Genre</button>
       <h2>Genre: {genre}</h2>
       <div>
+      <button id="trackbutton" className="randombutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
       </div>
       <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
         alt={"Spotify"} />
+    </div>
     </div>
   )
 }
