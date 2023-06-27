@@ -27,7 +27,8 @@ function SearchBar() {
 
     return (
         <div>
-            <p>You are on the Search Page</p>
+            <div className="background">
+            <p></p>
             <label>Search artists: </label>
             <input onChange={handleChange}
             type="text"
@@ -38,6 +39,7 @@ function SearchBar() {
             <TrackDisplay />
             <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
             alt={"Spotify"}/>
+            </div>
         </div>
     )
 }
