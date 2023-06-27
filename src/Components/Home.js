@@ -18,7 +18,16 @@ function Home(){
                 and whatever LCD Soundsystem qualifies as. 
             </p>
             <br />
-            <p>Ryan is really cool and will put his bio here.</p>
+            <p>Ryan is a nerd. He is very proud of the label and has been using it as a compliment
+                for many years. He enjoys learning about anything and everything, and that makes
+                most of life pretty enjoyable. He recommends finding ways to learn about something
+                at all times. Ryan fills his time with video games, playing D&D with friends,
+                practicing guitar and piano (he's no good at either, but the learning is the 
+                important part), dancing, and practicing martial arts. His favorite genre is 
+                definitely emo rock, but enjoys everything except badly tuned 4 chord country songs.
+                The concept of favorite song is ridiculous, but his favorite song today is Happy by
+                NF.
+            </p>
         </div>
         <div className="legal">
             <h4>Built using the Spotify Web API</h4>
