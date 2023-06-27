@@ -22,18 +22,18 @@ export default function Track({ track, inPlaylist }) {
   return (
     <div className="">
       <img src={album.images[2].url} alt={album.name}/>
-      <div className="">{name}</div>
+      <div className="">Title: {name}</div>
       <div className="">
         {artists.map(artist => {
-          return <div key={artist.name}>{artist.name}</div>;
+          return <div key={artist.name}>Artist: {artist.name}</div>;
         })}
       </div>
       <div className="">
-        {album.name}
+        Album: {album.name}
       </div>
       {inPlaylist ?
-      <button onClick={removeFromPlaylist}>Remove from Playlist</button>
-      :<button onClick={addToPlaylist}>Add to Playlist</button>}
+      <button className='playlistbutton' onClick={removeFromPlaylist}>Remove from Playlist</button>
+      :<button className='playlistbutton' onClick={addToPlaylist}>Add to Playlist</button>}
     </div>
   )
 }  
