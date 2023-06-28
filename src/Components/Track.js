@@ -16,23 +16,21 @@ export default function Track({ track, inPlaylist }) {
     setSaveState("Already Saved")
   }
 
-  //remove currently breaks if you add the same song more than once, TODO fix
   function removeFromPlaylist() {
     const editedList = playlist.filter(item => item.name !== name);
     setPlaylist(editedList);
   }
 
-  //TODO connect css library into classnames
   return (
-    <div className="">
-      <img src={album.images[2].url} alt={album.name}/>
-      <div className=""><b>Title: </b>{name}</div>
-      <div className="">
+    <div className="ui cards eight wide column">
+      <img src={album.images[1].url} alt={album.name}/>
+      <div className="ui header"><b>Title: </b>{name}</div>
+      <div className="ui meta">
         {artists.map(artist => {
           return <div key={artist.name}><b>Artist: </b>{artist.name}</div>;
         })}
       </div>
-      <div className="">
+      <div className="ui meta">
        <b>Album: </b> {album.name}
       </div>
       {inPlaylist ?

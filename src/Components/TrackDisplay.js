@@ -3,7 +3,7 @@ import Track from "./Track.js";
 
 function TrackDisplay({tracks, inPlaylist}) {
     return (
-        <div className="TrackList" id="Tracklist">
+      <div className="ui grid container" id="Tracklist">
         
         {tracks ? 
         tracks.map(track => {

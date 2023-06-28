@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { apiKeyAtom, artistsAtom } from "../helperFunctions/atoms";
 import ArtistDisplay from "./ArtistDisplay";
 
 export default function SearchArtists() {
     const [searchTerm, setSearchTerm] = useState("");
-    const [artists, setArtists] = useRecoilState(artistsAtom);
+    const setArtists = useSetRecoilState(artistsAtom);
     const apiKey = useRecoilValue(apiKeyAtom);
     let bearerToken = `Bearer ${apiKey}`;
     
@@ -28,19 +28,25 @@ export default function SearchArtists() {
     }
 
     return (
-        <div>
-            <div className="background">
-            <p></p>
-            <label>Search artists: </label>
-            <input onChange={handleChange}
-            type="text"
-            name="search"
-            value={searchTerm}
-            />
-            <button onClick={search}>Search</button>
+        <div className="background">
+            <div className="ui header">
+                <p></p>
+                <label>Search artists: </label>
+                <input onChange={handleChange}
+                    type="text"
+                    name="search"
+                    value={searchTerm}
+                />
+                <button onClick={search}>Search</button>
+            </div>
+            <div className="buffer">
+            </div>
             <ArtistDisplay />
-            <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
-            alt={"Spotify"}/>
+            <div className="buffer">
+            </div>
+            <div className="ui medium image">
+                <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
+                    alt={"Spotify"} />
             </div>
         </div>
     )
