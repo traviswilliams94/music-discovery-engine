@@ -6,12 +6,12 @@ import { artistsAtom } from "../helperFunctions/atoms.js";
 export default function ArtistDisplay() {
   const artists = useRecoilValue(artistsAtom);
     return (
-        <div className="artistList" id="artistlist">
+      <div className="ui grid container" id="artistlist">
         
         {artists ? 
         artists.map(artist => {
           return <Artist
-          key={artist.name} 
+          key={artist.id} 
           artist={artist}
           />
         })

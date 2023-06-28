@@ -5,7 +5,7 @@ function PlaylistPage() {
 
     return (
         <div className="background">
-            <p>You are on the Playlist Page</p>
+            <p className="ui header">You are on the Playlist Page</p>
             <PlaylistDisplay/>
         </div>
     )

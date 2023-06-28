@@ -45,8 +45,12 @@ function RandomGen() {
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
       </div>
-      <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
-        alt={"Spotify"} />
+      <div className="buffer">
+      </div>
+      <div className="ui medium image">
+        <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
+          alt={"Spotify"}/>
+      </div>
     </div>
   )
 }

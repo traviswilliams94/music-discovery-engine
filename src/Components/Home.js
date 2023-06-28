@@ -31,8 +31,10 @@ function Home(){
         </div>
         <div className="legal">
             <h4>Built using the Spotify Web API</h4>
-            <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
-            alt={"Spotify"}/>
+            <div className="ui medium image">
+                <img src={"https://developer.spotify.com/images/guidelines/design/logo.png"}
+                alt={"Spotify"}/>
+            </div>
         </div>
         </div>
     )

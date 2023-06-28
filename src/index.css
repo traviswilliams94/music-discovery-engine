@@ -31,12 +31,6 @@ code {
   margin-top: 25px;
 }
 
-img {
-  height: 200px;
-  width: 250px;
-  
-}
-
 .playlistbutton {
   margin-top: 10px;
   margin-bottom: 25px;
@@ -49,6 +43,10 @@ img {
 .aboutus {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.buffer {
+  height: 100px;
 }
 
 .randombutton {
