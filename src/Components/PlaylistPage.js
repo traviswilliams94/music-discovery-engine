@@ -5,15 +5,9 @@ function PlaylistPage() {
 
     return (
         <div className="background">
-            <p className="ui header">You are on the Playlist Page</p>
-            <PlaylistDisplay/>
+            <h2 className="ui header">My Saved Tracks</h2>
+            <PlaylistDisplay />
         </div>
     )
 }
-
-
-
-
-
-
 export default PlaylistPage;
