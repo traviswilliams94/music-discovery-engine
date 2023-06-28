@@ -1,6 +1,5 @@
 
 export default function Artist({artist}) {
-  console.log(artist.genres);
   return (
     <div className="">
       {/*TODO styling*/}

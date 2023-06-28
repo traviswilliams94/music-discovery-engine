@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import TrackDisplay from './TrackDisplay';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { apiKeyAtom, tracksAtom } from "../helperFunctions/atoms";
+import { apiKeyAtom, randomTracksAtom } from "../helperFunctions/atoms";
 import { generateRequestFromSeeds } from '../helperFunctions/helperFunctions';
 
 function RandomGen() {
   const [genres, setGenres] = useState([]);
   const [genre, setGenre] = useState('');
-  const [tracks, setTracks] = useRecoilState(tracksAtom);
+  const [tracks, setTracks] = useRecoilState(randomTracksAtom);
   const apiKey = useRecoilValue(apiKeyAtom);
   
   
