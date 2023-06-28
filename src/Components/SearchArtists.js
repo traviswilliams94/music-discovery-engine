@@ -23,14 +23,16 @@ export default function SearchArtists() {
           })
         .then(res => res.json())
         .then(data => {
-            setArtists(data.artists.items);
+            console.log(data.artists.items);
         });
     }
+
 
     return (
         <div className="background">
             <div className="ui header">
-                <p></p>
+                <div className="searchbar">
+                    <br />
                 <label>Search artists: </label>
                 <input onChange={handleChange}
                     type="text"
@@ -38,6 +40,7 @@ export default function SearchArtists() {
                     value={searchTerm}
                 />
                 <button onClick={search}>Search</button>
+                </div>
             </div>
             <div className="buffer">
             </div>
