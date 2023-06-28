@@ -23,7 +23,7 @@ export default function SearchArtists() {
           })
         .then(res => res.json())
         .then(data => {
-            console.log(data.artists.items);
+            setArtists(data.artists.items);
         });
     }
 
