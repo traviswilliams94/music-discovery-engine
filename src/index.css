@@ -14,10 +14,8 @@ code {
 
 #navbar {
   background-color: chartreuse;
-  margin-top: 5px;
+  margin-top: 10px;
 
-  
-  
 }
 
 .NavLink {
@@ -58,8 +56,10 @@ code {
 }
 .background {
   background-color: rgba(128, 255, 0, 0.554);
+  margin-top: 10px;
 }
 
 .playlistbutton {
   margin: 10px;
 }
+

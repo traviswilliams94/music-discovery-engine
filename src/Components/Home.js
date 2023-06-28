@@ -5,9 +5,11 @@ function Home(){
     return(
         <div className="background">
         <div className="aboutus">
-            <h2>About Us</h2>
-            Welcome to the Music Discovery Engine! This app was built by two music lovers. The intention is to facilitate discovery of music in new genres to find new tracks and artists
-            that you otherwise may not have known about. We hope you enjoy searching for new music and make sure to save the songs and artists that look interesting to you!
+            <br />
+            <h1>About Us</h1>
+            <br />
+            <p>Welcome to the Music Discovery Engine! This app was built by two music lovers. The intention is to facilitate discovery of music in new genres to find new tracks and artists
+            that you otherwise may not have known about. We hope you enjoy searching for new music and make sure to save the songs and artists that look interesting to you!</p>
         </div>
         <br />
         <div className="aboutus">

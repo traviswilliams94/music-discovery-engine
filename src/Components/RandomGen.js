@@ -37,7 +37,6 @@ function RandomGen() {
 
   return (
     <div className="background">
-      <p></p>
       <button id="genrebutton" className="randombutton" onClick={generateGenre} >Generate Genre</button>
       <h2>Genre: {genre}</h2>
       <div>

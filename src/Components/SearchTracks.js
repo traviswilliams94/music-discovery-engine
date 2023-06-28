@@ -30,7 +30,7 @@ export default function SearchTracks() {
   return (
     <div className="background">
       <div className="ui header">
-        <p></p>
+        <br />
         <label>Search tracks: </label>
         <input onChange={handleChange}
           type="text"
