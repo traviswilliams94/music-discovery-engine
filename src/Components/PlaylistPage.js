@@ -5,8 +5,8 @@ function PlaylistPage() {
 
     return (
         <div className="background">
-            <p>You are on the Playlist Page</p>
-            <PlaylistDisplay/>
+            <h2>My Saved Tracks</h2>
+            <PlaylistDisplay />
         </div>
     )
 }

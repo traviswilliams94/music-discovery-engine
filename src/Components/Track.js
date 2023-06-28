@@ -1,5 +1,6 @@
 import {useRecoilState} from 'recoil';
 import { playlistAtom } from '../helperFunctions/atoms';
+import {useState} from 'react';
 
 export default function Track({ track, inPlaylist }) {
   const name = track.name;
@@ -7,11 +8,14 @@ export default function Track({ track, inPlaylist }) {
   const album = track.album;
 
   const [playlist, setPlaylist] = useRecoilState(playlistAtom);
+  const [saveState, setSaveState] = useState("Save Track")
 
   //depending on where track component is rendered, the button will either add or remove
   function addToPlaylist() {
     setPlaylist([...playlist, track])
+    setSaveState("Already Saved")
   }
+
   //remove currently breaks if you add the same song more than once, TODO fix
   function removeFromPlaylist() {
     const editedList = playlist.filter(item => item.name !== name);
@@ -32,8 +36,8 @@ export default function Track({ track, inPlaylist }) {
        <b>Album: </b> {album.name}
       </div>
       {inPlaylist ?
-      <button className='playlistbutton' onClick={removeFromPlaylist}>Remove from Playlist</button>
-      :<button className='playlistbutton' onClick={addToPlaylist}>Add to Playlist</button>}
+      <button className='playlistbutton' onClick={removeFromPlaylist}>Remove from Saved Tracks</button>
+      : <button className='playlistbutton' onClick={addToPlaylist}>{saveState}</button>}
     </div>
   )
 }  

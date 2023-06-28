@@ -44,7 +44,7 @@ function App() {
       <Routes>
           <Route path='/searchArtists' element={<SearchArtists />}></Route>
           <Route path='/searchTracks' element={<SearchTracks />}></Route>
-          <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
+          <Route path='/mysavedtracks' element={<PlaylistPage playlist={playlist}/>}></Route>
           <Route path='/randomgenerator' element={<RandomGen />}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>
