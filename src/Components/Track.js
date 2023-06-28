@@ -24,7 +24,7 @@ export default function Track({ track, inPlaylist }) {
   return (
     <div className="ui cards eight wide column">
       <div className="ui content">
-        <img src={album.images[1].url} alt={album.name} />
+        <img className="ui small centered image" src={album.images[1].url} alt={album.name} />
         <div className="ui header">{name}</div>
         <div className="ui artist">
           {artists.map(artist => {
