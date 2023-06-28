@@ -41,7 +41,7 @@ function RandomGen() {
       <button id="genrebutton" className="randombutton" onClick={generateGenre} >Generate Genre</button>
       <h2>Genre: {genre}</h2>
       <div>
-      <button id="trackbutton" className="randombutton" onClick={() => { getRandomTracks(genre) }}>Get Random Tracks</button>
+      <button id="trackbutton" className="randombutton" onClick={() => { getRandomTracks(genre) }}>Get Random {genre} Tracks</button>
         <h2>Matching Tracks:</h2>
         <TrackDisplay tracks={tracks} inPlaylist={false}/>
       </div>

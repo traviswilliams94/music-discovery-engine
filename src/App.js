@@ -59,7 +59,7 @@ function App() {
       <NavBar onChangePage={setPage}/>
       <Routes>
           <Route path='/searchbar' element={<SearchBar />}></Route>
-          <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
+          <Route path='/mysavedtracks' element={<PlaylistPage playlist={playlist}/>}></Route>
           <Route path='/randomgenerator' element={<RandomGen />}></Route>
           <Route path='/' element={<Home />}></Route>
       </Routes>

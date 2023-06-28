@@ -10,7 +10,7 @@ function NavBar() {
         <nav id='navbar'>
             <NavLink className='NavLink' exact to='/'>Home</NavLink>
             <NavLink className='NavLink' to='/searchbar'>Search Music</NavLink>
-            <NavLink className='NavLink' to='/createplaylist'>Build a Playlist</NavLink>
+            <NavLink className='NavLink' to='/mysavedtracks'>Saved Tracks</NavLink>
             <NavLink className='NavLink' to='/randomgenerator'>Random Generator</NavLink>
         </nav>
         </div>
