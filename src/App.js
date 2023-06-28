@@ -5,7 +5,8 @@ import { useRecoilState } from 'recoil';
 import { apiKeyAtom } from './helperFunctions/atoms';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
-import SearchBar from './Components/SearchBar';
+import SearchArtists from './Components/SearchArtists';
+import SearchTracks from './Components/SearchTracks';
 import PlaylistPage from './Components/PlaylistPage';
 import RandomGen from './Components/RandomGen';
 
@@ -31,25 +32,8 @@ function App() {
     .then(data => {
       const token = data.access_token;
       setApiKey(token);
-      console.log(token);
     })
   } , [])
-
-  //template function for how to use the authentication
-  function template() {
-    fetch("https://api.spotify.com/v1/endpoint", {//replace endpoint
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: bearerToken,//will only work after useEffect async completes
-      },
-    })
-    .then(res => res.json())
-    .then()//do whatever
-  }
-
-  function addToPlaylist(track) {
-    setPlaylist(playlist => [...playlist, track]);
-  }
 
   const [page, setPage] = useState("/")
 
@@ -58,7 +42,8 @@ function App() {
 
       <NavBar onChangePage={setPage}/>
       <Routes>
-          <Route path='/searchbar' element={<SearchBar />}></Route>
+          <Route path='/searchArtists' element={<SearchArtists />}></Route>
+          <Route path='/searchTracks' element={<SearchTracks />}></Route>
           <Route path='/createplaylist' element={<PlaylistPage playlist={playlist}/>}></Route>
           <Route path='/randomgenerator' element={<RandomGen />}></Route>
           <Route path='/' element={<Home />}></Route>

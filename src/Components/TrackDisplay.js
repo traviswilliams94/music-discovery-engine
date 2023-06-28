@@ -8,7 +8,7 @@ function TrackDisplay({tracks, inPlaylist}) {
         {tracks ? 
         tracks.map(track => {
           return <Track 
-          key={track.name} 
+          key={track.id} 
           track={track}
           inPlaylist={inPlaylist}/>
         })

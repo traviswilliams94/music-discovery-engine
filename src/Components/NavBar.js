@@ -9,7 +9,8 @@ function NavBar() {
          </header>
         <nav id='navbar'>
             <NavLink className='NavLink' exact to='/'>Home</NavLink>
-            <NavLink className='NavLink' to='/searchbar'>Search Music</NavLink>
+            <NavLink className='NavLink' to='/searchArtists'>Search Artists</NavLink>
+            <NavLink className='NavLink' to='/searchTracks'>Search Tracks</NavLink>
             <NavLink className='NavLink' to='/createplaylist'>Build a Playlist</NavLink>
             <NavLink className='NavLink' to='/randomgenerator'>Random Generator</NavLink>
         </nav>

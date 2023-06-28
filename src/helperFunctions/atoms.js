@@ -5,8 +5,13 @@ export const apiKeyAtom = atom({
   default: ''
 })
 
-export const tracksAtom = atom({
-  key: 'tracks',
+export const randomTracksAtom = atom({
+  key: 'randomTracks',
+  default: []
+})
+
+export const searchTracksAtom = atom({
+  key: 'searchTracks',
   default: []
 })
 
