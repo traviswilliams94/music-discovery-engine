@@ -1,7 +1,8 @@
 
 export default function Artist({artist}) {
   return (
-    <div className="ui cards four wide column">
+    <div className="ui card four wide column">
+      <img className="ui small image" src={artist.images[1].url}/>
       <div className="ui header">{artist.name}</div>
       <div className="ui meta">genres:
       {artist.genres.map(genre => {
