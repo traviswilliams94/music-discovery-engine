@@ -5,7 +5,7 @@ function PlaylistPage() {
 
     return (
         <div className="background">
-            <br />
+            
             <h2 className="ui header">My Saved Tracks</h2>
             <PlaylistDisplay />
         </div>

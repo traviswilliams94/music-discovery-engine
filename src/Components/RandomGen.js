@@ -15,6 +15,7 @@ function RandomGen() {
   
   function generateGenre(){
     const randomGenreIndex = Math.floor(Math.random() * genres.length);
+    setTracks([]);
     fetch("http://localhost:3001/genres")
       .then(res => res.json())
       .then(setGenres)
