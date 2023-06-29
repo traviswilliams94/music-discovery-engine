@@ -18,8 +18,12 @@ function RandomGen() {
     setTracks([]);
     fetch("http://localhost:3001/genres")
       .then(res => res.json())
-      .then(setGenres)
-      .then(setGenre(genres[randomGenreIndex])); 
+      .then(data => {
+        setGenres(data)
+        return data
+      })
+      .then(data => setGenre(data[randomGenreIndex])); 
+   
 }
 
   function getRandomTracks(genre) {
@@ -38,7 +42,7 @@ function RandomGen() {
 
   return (
     <div className="background">
-      <button id="genrebutton" className="randombutton" onClick={generateGenre} >Generate Genre</button>
+      <button id="genrebutton" className="randombutton" onClick={() => generateGenre()} >Generate Genre</button>
       <h2>Genre: {genre}</h2>
       <div>
       <button id="trackbutton" className="randombutton" onClick={() => { getRandomTracks(genre) }}>Get Random {genre} Tracks</button>
